@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+option java_multiple_files = true;
+
+import "laptop_message.proto";
+
+message StoreLaptopRequest {
+  Laptop laptop = 1;
+}
+
+message StoreLaptopResponse {
+  string id = 1;
+}
+
+service LaptopService {
+  rpc StoreLaptop(StoreLaptopRequest) returns (StoreLaptopResponse) { };
+}
